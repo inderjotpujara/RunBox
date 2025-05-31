@@ -1,0 +1,252 @@
+# AI Development Rules for RunBox Project
+
+## Introduction & Objectives
+
+This file implements autonomous AI coding workflow rules adapted for VS Code environment, ensuring consistent AI assistance across development phases while maintaining project context and code quality.
+
+**Core Goals:**
+
+- Preserve project context & intent through LTM/STM system
+- Enforce coding standards and best practices
+- Leverage VS Code AI tools and extensions
+- Maintain task continuity and autonomous operation
+- Prevent context drift and hallucination
+
+## Project Configuration
+
+### Tech Stack
+
+- **Frontend**: React Native (Expo), TypeScript
+- **Backend**: Node.js/Express, TypeScript
+- **Database**: Firebase (Auth + Firestore), PostgreSQL (Prisma)
+- **AI Tools**: GitHub Copilot, AI Rules Sync, VS Code AI extensions
+
+### Architecture
+
+- Client/server separation with clear API boundaries
+- MVC pattern for server-side (Models, Views, Controllers)
+- MVVM pattern for client-side (Model-View-ViewModel)
+- Component-based modular design
+
+## Coding Standards
+
+### Front-end Rules
+
+- Functional components with React Hooks only
+- Separate UI/Logic/Styles into modular components
+- CamelCase for variables/functions, PascalCase for components
+- Strict TypeScript - absolutely no `any` types
+- Implement proper loading states and error boundaries
+
+### Back-end Rules
+
+- Async/await exclusively, no callback patterns
+- Comprehensive error handling mandatory
+- Feature-based folder organization
+- Security-first: no secrets in code, validate all inputs
+- RESTful API design with consistent response formats
+
+### General Policies
+
+- No placeholder code, stubs, or TODO comments
+- Format and lint all code automatically
+- Meaningful comments for complex AI integration logic
+- One feature per commit with descriptive messages
+
+## VS Code AI Integration
+
+### GitHub Copilot Configuration
+
+- Enable context-aware suggestions
+- Use inline completions for faster development
+- Leverage chat integration for planning sessions
+- Enable for all file types except sensitive configs
+
+### AI Rules Sync Setup
+
+- Base rule file: `.cursorrules` (project root)
+- Auto-sync to multiple AI tools when base file changes
+- Watch for file changes and sync immediately
+- Maintain consistency across development environment
+
+### Extension Recommendations
+
+- GitHub Copilot & Copilot Chat
+- AI Rules Sync for multi-tool compatibility
+- Prettier for code formatting
+- ESLint for JavaScript/TypeScript linting
+- Thunder Client for API testing
+
+## Autonomous Development Phases
+
+### 1. Analyze Phase
+
+- **Objective**: Understand requirements and context
+- **Actions**:
+  - Read relevant files and documentation
+  - Search for unknown information using VS Code search
+  - Log understanding without writing any code
+- **Output**: Clear problem statement and requirements
+
+### 2. Blueprint Phase
+
+- **Objective**: Create implementation strategy
+- **Actions**:
+  - Break down solution into ordered checklist
+  - Identify front-end, back-end, and database components
+  - Note dependencies and integration points
+  - Set status to NEEDS_PLAN_APPROVAL (manual review point)
+- **Output**: Detailed implementation plan
+
+### 3. Construct Phase
+
+- **Objective**: Execute implementation
+- **Actions**:
+  - Follow plan checklist sequentially
+  - Use VS Code tools for file operations
+  - Fix errors immediately (maximum 3 retry attempts)
+  - No incomplete or placeholder implementations
+  - Update workflow log after each major step
+- **Output**: Complete, tested, functional code
+
+### 4. Validate Phase
+
+- **Objective**: Verify implementation quality
+- **Actions**:
+  - Run tests and validation checks
+  - Verify adherence to coding standards
+  - Check performance and security implications
+  - If validation fails, return to Construct phase
+  - Log "All tests passed" or detailed failure summary
+- **Output**: Validated, production-ready code
+
+## Memory System Implementation
+
+### Long-Term Memory (LTM): `project_config.md`
+
+- **Purpose**: Persistent project knowledge
+- **Contains**:
+  - Tech stack and architecture decisions
+  - Coding standards and conventions
+  - Library preferences and API formats
+  - Security and performance guidelines
+- **Updates**: Only when fundamental project decisions change
+
+### Short-Term Memory (STM): `workflow_state.md`
+
+- **Purpose**: Current session context and progress
+- **Contains**:
+  - Current phase, status, and active task
+  - Ordered implementation checklist (Plan)
+  - Phase-specific operational rules
+  - Chronological action log
+  - Task queue for repetitive operations
+- **Updates**: After every significant action or decision
+
+## Operational Guidelines
+
+### Logging Protocol
+
+- One-line entries in past tense
+- Format: "Action: Description of accomplishment"
+- Include timestamps for major milestones
+- Never modify existing logs, only append
+- Summarize when log becomes too lengthy
+
+### Error Handling Strategy
+
+- Maximum 3 retry attempts per specific error
+- Log each retry attempt with changed approach
+- If 3 attempts fail, set status to BLOCKED
+- Document error context for human review
+- Continue with other tasks when possible
+
+### Context Preservation
+
+- Read both LTM and STM before any action
+- Update STM progress after each major step
+- Maintain awareness of overall project goals
+- Reference previous decisions when making new ones
+- Keep implementation consistent with established patterns
+
+### Tool Usage Priorities
+
+1. VS Code integrated tools (file operations, search, terminal)
+2. GitHub Copilot for code generation and completion
+3. AI Rules Sync for consistency across tools
+4. Extension-provided functionality
+5. Web search for external documentation (last resort)
+
+## Quality Assurance Rules
+
+### Code Quality Checks
+
+- TypeScript strict mode compliance
+- ESLint rule adherence
+- Prettier formatting consistency
+- No console.log statements in production
+- Proper error handling for all async operations
+
+### Security Validation
+
+- No hardcoded secrets or API keys
+- Input validation for all user data
+- Proper authentication/authorization checks
+- HTTPS enforcement for all communications
+- Regular dependency vulnerability scans
+
+### Performance Considerations
+
+- Bundle size optimization
+- Lazy loading implementation
+- Database query optimization
+- Caching strategy implementation
+- Memory leak prevention
+
+## VS Code Settings Integration
+
+### Auto-formatting Configuration
+
+```json
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  }
+}
+```
+
+### AI Assistant Settings
+
+```json
+{
+  "github.copilot.enable": { "*": true },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "aiRulesSync.autoSync": true,
+  "aiRulesSync.watchForChanges": true
+}
+```
+
+## Emergency Protocols
+
+### When AI Gets Stuck (Status: BLOCKED)
+
+1. Document the specific issue in workflow log
+2. Note attempted solutions and their outcomes
+3. Set clear status message for human review
+4. Continue with other independent tasks if possible
+5. Provide context for human intervention
+
+### Context Loss Recovery
+
+1. Re-read both LTM (`project_config.md`) and STM (`workflow_state.md`)
+2. Review recent log entries for current context
+3. Identify last successful action and current phase
+4. Resume from appropriate phase entry point
+5. Update status to reflect recovery action
+
+---
+
+**System Prompt Integration**: This file serves as the comprehensive rule system for autonomous AI development in VS Code. All AI assistants should reference these rules for consistent behavior and high-quality code generation while maintaining project context and standards.

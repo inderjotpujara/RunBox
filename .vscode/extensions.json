@@ -1,0 +1,22 @@
+{
+  "recommendations": [
+    "github.copilot",
+    "github.copilot-chat", 
+    "zidonglin.ai-rules-sync",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-eslint",
+    "ms-typescript.typescript",
+    "ms-vscode.vscode-json",
+    "rangav.vscode-thunder-client",
+    "ms-vscode.vscode-node-debug2",
+    "ms-react-native.vscode-react-native",
+    "expo.vscode-expo-tools",
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode.vscode-typescript-next",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "ms-vscode.vscode-json-languageservice",
+    "ms-vscode.references-view",
+    "ms-vscode.vscode-outline"
+  ]
+}

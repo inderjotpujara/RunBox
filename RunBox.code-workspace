@@ -1,0 +1,42 @@
+{
+  "folders": [
+    {
+      "path": ".",
+      "name": "RunBox"
+    }
+  ],
+  "settings": {
+    // This workspace inherits from .vscode/settings.json
+    // Additional workspace-specific settings can be added here
+    "workbench.colorTheme": "GitHub Dark Default",
+    "workbench.iconTheme": "vs-seti",
+    "workbench.startupEditor": "readme"
+  },
+  "extensions": {
+    "recommendations": [
+      "github.copilot",
+      "github.copilot-chat",
+      "zidonglin.ai-rules-sync",
+      "esbenp.prettier-vscode",
+      "ms-vscode.vscode-eslint"
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Initialize AI Development Environment",
+        "type": "shell",
+        "command": "echo",
+        "args": ["Setting up autonomous AI development environment for RunBox..."],
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      }
+    ]
+  }
+}

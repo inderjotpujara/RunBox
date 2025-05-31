@@ -1,0 +1,185 @@
+{
+  // ========================
+  // AI-Powered Development Configuration
+  // ========================
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": true
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.chat.followUps": "on",
+  "github.copilot.conversation.localeOverride": "auto",
+  
+  // AI Rules Sync Extension Configuration
+  "aiRulesSync.baseRuleFile": "${workspaceFolder}/.cursorrules",
+  "aiRulesSync.targetRules": [
+    "${workspaceFolder}/.vscode/ai-rules.md",
+    "${workspaceFolder}/project_config.md",
+    "${workspaceFolder}/workflow_state.md"
+  ],
+  "aiRulesSync.autoSync": true,
+  "aiRulesSync.watchForChanges": true,
+
+  // ========================
+  // Autonomous AI Development Rules
+  // ========================
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.openPositioning": "right",
+  "workbench.startupEditor": "none",
+  
+  // Editor Configuration for AI-Assisted Development
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit",
+    "source.addMissingImports": "explicit"
+  },
+  "editor.suggestSelection": "first",
+  "editor.acceptSuggestionOnCommitCharacter": true,
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "on",
+    "strings": "on"
+  },
+  "editor.parameterHints.enabled": true,
+  "editor.wordBasedSuggestions": "matchingDocuments",
+  "editor.semanticHighlighting.enabled": true,
+  
+  // ========================
+  // File Management & Context Preservation
+  // ========================
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.vscode-test": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/build": true
+  },
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/.git/objects/**": true,
+    "**/dist/**": true,
+    "**/build/**": true
+  },
+  
+  // ========================
+  // Search & Context Discovery
+  // ========================
+  "search.useGlobalIgnoreFiles": true,
+  "search.useIgnoreFiles": true,
+  "search.smartCase": true,
+  "search.followSymlinks": false,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/dist": true,
+    "**/build": true
+  },
+  
+  // ========================
+  // Terminal & Task Configuration
+  // ========================
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "zsh",
+      "args": ["-l"]
+    }
+  },
+  "terminal.integrated.env.osx": {
+    "VSCODE_AI_RULES": "${workspaceFolder}/.cursorrules"
+  },
+  
+  // ========================
+  // Extensions for AI Development
+  // ========================
+  "extensions.autoUpdate": false,
+  "extensions.autoCheckUpdates": false,
+  
+  // ========================
+  // Language-Specific AI Rules
+  // ========================
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "github.copilot.enable": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "github.copilot.enable": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "github.copilot.enable": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "github.copilot.enable": true
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "github.copilot.enable": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on",
+    "github.copilot.enable": true
+  },
+  
+  // ========================
+  // Task Runner Configuration
+  // ========================
+  "task.autoDetect": "on",
+  "task.allowAutomaticTasks": "on",
+  
+  // ========================
+  // Debugging Configuration
+  // ========================
+  "debug.allowBreakpointsEverywhere": true,
+  "debug.showInlineBreakpointCandidates": true,
+  "debug.showBreakpointsInOverviewRuler": true,
+  
+  // ========================
+  // AI Context Preservation
+  // ========================
+  "workbench.editor.restoreViewState": true,
+  "workbench.editor.revealIfOpen": true,
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 20,
+  "workbench.editor.limit.perEditorGroup": true,
+  
+  // ========================
+  // Settings Sync Configuration
+  // ========================
+  "settingsSync.ignoredSettings": [],
+  "settingsSync.ignoredExtensions": []
+}

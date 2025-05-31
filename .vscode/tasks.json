@@ -1,0 +1,89 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "AI: Initialize Project",
+      "type": "shell",
+      "command": "echo",
+      "args": ["Initializing AI-powered development environment..."],
+      "group": "build",
+      "isBackground": false,
+      "problemMatcher": []
+    },
+    {
+      "label": "AI: Sync Rules",
+      "type": "shell",
+      "command": "echo",
+      "args": ["Syncing AI rules across tools..."],
+      "group": "build",
+      "isBackground": false,
+      "dependsOn": "AI: Initialize Project"
+    },
+    {
+      "label": "AI: Format Code",
+      "type": "shell", 
+      "command": "npx",
+      "args": ["prettier", "--write", "**/*.{js,jsx,ts,tsx,json,md}"],
+      "group": "build",
+      "isBackground": false,
+      "problemMatcher": []
+    },
+    {
+      "label": "AI: Lint Code",
+      "type": "shell",
+      "command": "npx", 
+      "args": ["eslint", "**/*.{js,jsx,ts,tsx}", "--fix"],
+      "group": "build",
+      "isBackground": false,
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "AI: Full Quality Check",
+      "type": "shell",
+      "command": "echo",
+      "args": ["Running comprehensive AI-assisted quality checks..."],
+      "group": "test",
+      "isBackground": false,
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "AI: Format Code",
+        "AI: Lint Code"
+      ]
+    },
+    {
+      "label": "AI: Generate Documentation",
+      "type": "shell",
+      "command": "echo",
+      "args": ["AI-generating project documentation..."],
+      "group": "build",
+      "isBackground": false
+    },
+    {
+      "label": "Start Development Server",
+      "type": "shell",
+      "command": "npm",
+      "args": ["start"],
+      "group": "build",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Tests",
+      "type": "shell",
+      "command": "npm", 
+      "args": ["test"],
+      "group": "test",
+      "isBackground": false,
+      "problemMatcher": []
+    },
+    {
+      "label": "Build Project",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "build"],
+      "group": "build",
+      "isBackground": false,
+      "problemMatcher": []
+    }
+  ]
+}
